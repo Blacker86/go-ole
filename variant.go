@@ -100,6 +100,8 @@ func (v *VARIANT) Value() interface{} {
 		return v.ToIDispatch()
 	case VT_BOOL:
 		return (v.Val & 0xffff) != 0
+	case VT_CY:
+		return int64(v.Val)
 	}
 	return nil
 }
